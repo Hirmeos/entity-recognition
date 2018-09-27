@@ -1,7 +1,7 @@
 <?php
 
-require_once('Domain/EFTermEntityDefinition.php');
-require_once('Domain/EFCategory.php');
+require_once('EFTermEntityDefinition.php');
+require_once('EFCategory.php');
 
 class EFTermEntity
 {

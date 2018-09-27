@@ -1,7 +1,7 @@
 <?php
 
-require_once('Domain/EFTermEntity.php');
-require_once('Domain/EFMultilingual.php');
+require_once('EFTermEntity.php');
+require_once('EFMultilingual.php');
 
 class EFTerm
 {

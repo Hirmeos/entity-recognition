@@ -1,6 +1,6 @@
 <?php
 
-require_once('Domain/EFPosition.php');
+require_once('EFPosition.php');
 
 class EFTextEntity
 {
@@ -35,4 +35,26 @@ class EFTextEntity
 			}
 		}
 	}
+
+    function getDomainsText($separator){
+        $result = NULL;
+        for( $j = 0; $j<count($this->domains); $j++ ) {
+            if (!is_null($result)){
+                $result = $result.$separator;
+            }
+            else {
+                $result = "";
+            }
+            $result = $result . $this->domains[$j];
+        }
+
+        return $result;
+    }
+
+    function getDefinition(){
+        if (!is_null($this->concept_response)){
+            return $this->concept_response->definitions[0]->definition;
+        }
+        return "";
+    }
 }
