@@ -16,6 +16,15 @@ Just copy the following files in your project:
 
 Method 2 relies on Packagist (https://packagist.org/)
 
+    {
+	    "require": {
+	
+	  	    "hirmeos/entity-fishing-php-wrapper" : "*"
+	    }
+	}
+
+See the composer documentation here: https://packagist.org/ and here: https://getcomposer.org/doc/01-basic-usage.md#package-versions
+
 <h2>Usage</h2>
 
 Include: EFWebServiceManager.php in your file
