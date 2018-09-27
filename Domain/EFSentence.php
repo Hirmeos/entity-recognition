@@ -1,5 +1,5 @@
 <?php
-class Sentence
+class EFSentence
 {
 
 	public $offset_start; //int

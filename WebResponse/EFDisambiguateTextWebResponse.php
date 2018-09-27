@@ -1,13 +1,13 @@
 <?php
 
-require_once('EKTDisambiguateWebResponse.php');
-require_once('Domain/Language.php');
-require_once('Domain/TextEntity.php');
-require_once('Domain/Category.php');
+require_once('EFDisambiguateWebResponse.php');
+require_once(__DIR__ . '/../Domain/EFLanguage.php');
+require_once(__DIR__ . '/../Domain/EFTextEntity.php');
+require_once(__DIR__ . '/../Domain/EFCategory.php');
 
-class EKTDisambiguateShortTextWebResponse extends EKTDisambiguateWebResponse
+class EFDisambiguateTextWebResponse extends EFDisambiguateWebResponse
 {
-	public $short_text; //string
+	public $search_text; //string
 	public $language; //Language
 	public $entities = array(); //array of TextEntity
 	public $categories = array(); //array of Category
@@ -19,24 +19,24 @@ class EKTDisambiguateShortTextWebResponse extends EKTDisambiguateWebResponse
 		if (!$this->has_error){
 			$json = json_decode($response, true);
 			
-      		$this->short_text = $json["shortText"];
+      		$this->search_text = $json["text"];
       		
       		$lang_data = $json["language"];
       		if ($lang_data){
-      			$this->language = new Language($lang_data);
+      			$this->language = new EFLanguage($lang_data);
       		}
       		
       		$entities = $json["entities"];
       		if ($entities){
       			foreach ($entities as $entity) {
-      				array_push($this->entities, new TextEntity($entity));
+      				array_push($this->entities, new EFTextEntity($entity));
       			}
       		}
       		
-      		$categories = $json["global_categories"];
+      		$categories = array_key_exists('global_categories', $json) ? $json["global_categories"] : NULL;
       		if ($categories){
       			foreach ($categories as $category) {
-      				array_push($this->categories, new Category($category));
+      				array_push($this->categories, new EFCategory($category));
       			}
       		}
 		}

@@ -1,8 +1,8 @@
 <?php
 
-require_once('Domain/Position.php');
+require_once('Domain/EFPosition.php');
 
-class TextEntity
+class EFTextEntity
 {
 
 	public $raw_name; //string
@@ -31,7 +31,7 @@ class TextEntity
 		$positions = array_key_exists('pos', $data) ? $data["pos"] : NULL;
 		if ($positions){
 			foreach ($positions as $position) {
-				array_push($this->pos, new Position($position));
+				array_push($this->pos, new EFPosition($position));
 			}
 		}
 	}

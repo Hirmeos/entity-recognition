@@ -1,9 +1,9 @@
 <?php
 
-require_once('Domain/TermEntityDefinition.php');
-require_once('Domain/Category.php');
+require_once('Domain/EFTermEntityDefinition.php');
+require_once('Domain/EFCategory.php');
 
-class TermEntity
+class EFTermEntity
 {
 
 	public $raw_name; //string
@@ -27,14 +27,14 @@ class TermEntity
 		$definitions = $data["definitions"];
 		if ($definitions){
 			foreach ($definitions as $definition) {
-				array_push($this->definitions, new TermEntityDefinition($definition));
+				array_push($this->definitions, new EFTermEntityDefinition($definition));
 			}
 		}
 		
 		$categories = $data["categories"];
 		if ($categories){
 			foreach ($categories as $category) {
-				array_push($this->categories, new Category($category));
+				array_push($this->categories, new EFCategory($category));
 			}
 		}
 	}

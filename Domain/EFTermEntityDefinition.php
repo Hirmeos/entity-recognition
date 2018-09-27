@@ -1,5 +1,5 @@
 <?php
-class TermEntityDefinition
+class EFTermEntityDefinition
 {
 
 	public $definition; //string

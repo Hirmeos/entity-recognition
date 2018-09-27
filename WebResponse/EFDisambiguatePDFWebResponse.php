@@ -1,11 +1,11 @@
 <?php
 
-require_once('EKTDisambiguateWebResponse.php');
-require_once('Domain/Language.php');
-require_once('Domain/TextEntity.php');
-require_once('Domain/Page.php');
+require_once('EFDisambiguateWebResponse.php');
+require_once(__DIR__ . '/../Domain/EFLanguage.php');
+require_once(__DIR__ . '/../Domain/EFTextEntity.php');
+require_once(__DIR__ . '/../Domain/EFPage.php');
 
-class EKTDisambiguatePDFWebResponse extends EKTDisambiguateWebResponse
+class EFDisambiguatePDFWebResponse extends EFDisambiguateWebResponse
 {
 	public $language; //Language
 	public $entities = array(); //array of TextEntity
@@ -20,20 +20,20 @@ class EKTDisambiguatePDFWebResponse extends EKTDisambiguateWebResponse
 			
       		$lang_data = $json["language"];
       		if ($lang_data){
-      			$this->language = new Language($lang_data);
+      			$this->language = new EFLanguage($lang_data);
       		}
       		
       		$entities = $json["entities"];
       		if ($entities){
       			foreach ($entities as $entity) {
-      				array_push($this->entities, new TextEntity($entity));
+      				array_push($this->entities, new EFTextEntity($entity));
       			}
       		}
       		
       		$pages = $json["pages"];
       		if ($pages){
       			foreach ($pages as $page) {
-      				array_push($this->pages, new Page($page));
+      				array_push($this->pages, new EFPage($page));
       			}
       		}
 		}

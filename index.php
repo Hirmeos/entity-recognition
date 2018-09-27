@@ -4,12 +4,12 @@
 
 <?php
 
-require_once('EKTWebServiceManager.php');
+require_once('EFWebServiceManager.php');
 
 
 echo "Testing <b>disambiguateText</b><br/>";
 echo "[INPUT] testing for Bill Gates<br/>";
-$theresponse = EKTWebServiceManager::disambiguateText("testing for Bill Gates", NULL);
+$theresponse = EFWebServiceManager::getInstance()->disambiguateText("testing for Bill Gates", NULL);
 if ($theresponse->has_error){
 	echo "[ERROR] " . $theresponse->error_msg;
 }
@@ -21,7 +21,7 @@ echo "<br/><br/>";
 
 echo "Testing <b>disambiguateShortText</b><br/>";
 echo "[INPUT] testing for Bill Gates<br/>";
-$theresponse = EKTWebServiceManager::disambiguateShortText("testing for Bill Gates", NULL);
+$theresponse = EFWebServiceManager::getInstance()->disambiguateShortText("testing for Bill Gates", NULL);
 if ($theresponse->has_error){
 	echo "[ERROR] " . $theresponse->error_msg;
 }
@@ -33,7 +33,7 @@ echo "<br/><br/>";
 
 echo "Testing <b>disambiguateTermVector</b><br/>";
 echo "[INPUT] computer science<br/>";
-$theresponse = EKTWebServiceManager::disambiguateTermVector(array(array('term' => 'computer science', 'score' => 0.3)), "en");
+$theresponse = EFWebServiceManager::getInstance()->disambiguateTermVector(array(array('EFTerm' => 'computer science', 'score' => 0.3)), "en");
 if ($theresponse->has_error){
 	echo "[ERROR] " . $theresponse->error_msg;
 }
@@ -44,7 +44,7 @@ echo "<br/><br/>";
 
 
 echo "Testing <b>disambiguatePDF</b><br/>";
-$theresponse = EKTWebServiceManager::disambiguatePDF("sample.pdf", "en");
+$theresponse = EFWebServiceManager::getInstance()->disambiguatePDF("sample.pdf", "en");
 if ($theresponse->has_error){
 	echo "[ERROR] " . $theresponse->error_msg;
 }
@@ -56,7 +56,7 @@ echo "<br/><br/>";
 
 echo "Testing <b>concept</b><br/>";
 echo "[INPUT] concept id: 3747<br/>";
-$theresponse = EKTWebServiceManager::concept(3747, NULL);
+$theresponse = EFWebServiceManager::getInstance()->concept(3747, NULL);
 if ($theresponse->has_error){
 	echo "[ERROR] " . $theresponse->error_msg;
 }
@@ -68,7 +68,7 @@ echo "<br/><br/>";
 
 echo "Testing <b>term</b><br/>";
 echo "[INPUT] science<br/>";
-$theresponse = EKTWebServiceManager::term("science", NULL);
+$theresponse = EFWebServiceManager::getInstance()->term("science", NULL);
 if ($theresponse->has_error){
 	echo "[ERROR] " . $theresponse->error_msg;
 }
@@ -80,7 +80,7 @@ echo "<br/><br/>";
 
 echo "Testing <b>language</b><br/>";
 echo "[INPUT] This is a sentence in plain English<br/>";
-$theresponse = EKTWebServiceManager::language("This is a sentence in plain English");
+$theresponse = EFWebServiceManager::getInstance()->language("This is a sentence in plain English");
 if ($theresponse->has_error){
 	echo "[ERROR] " . $theresponse->error_msg;
 }
@@ -92,7 +92,7 @@ echo "<br/><br/>";
 
 echo "Testing <b>segmentation</b><br/>";
 echo "[INPUT] This is the first sentence. And this is the second one!<br/>";
-$theresponse = EKTWebServiceManager::segmentation("This is the first sentence. And this is the second one!");
+$theresponse = EFWebServiceManager::getInstance()->segmentation("This is the first sentence. And this is the second one!");
 if ($theresponse->has_error){
 	echo "[ERROR] " . $theresponse->error_msg;
 }

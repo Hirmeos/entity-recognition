@@ -1,8 +1,8 @@
 <?php
 
-require_once('EKTGenericWebResponse.php');
+require_once('EFGenericWebResponse.php');
 
-class EKTDisambiguateWebResponse extends EKTGenericWebResponse
+class EFDisambiguateWebResponse extends EFGenericWebResponse
 {
 	// property declaration
 	public $runtime;

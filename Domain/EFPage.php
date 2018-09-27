@@ -1,5 +1,5 @@
 <?php
-class Page
+class EFPage
 {
 
 	public $page_height; //double

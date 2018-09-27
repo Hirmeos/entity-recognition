@@ -1,9 +1,9 @@
 <?php
 
-require_once('EKTGenericWebResponse.php');
-require_once('Domain/Sentence.php');
+require_once('EFGenericWebResponse.php');
+require_once(__DIR__ . '/../Domain/EFSentence.php');
 
-class EKTSegmentationWebResponse extends EKTGenericWebResponse
+class EFSegmentationWebResponse extends EFGenericWebResponse
 {
 	public $sentences = array(); //array of Sentence
 	
@@ -17,7 +17,7 @@ class EKTSegmentationWebResponse extends EKTGenericWebResponse
 			$sentences = $json["sentences"];
 			if ($sentences){
 				foreach ($sentences as $sentence) {
-					array_push($this->sentences, new Sentence($sentence));
+					array_push($this->sentences, new EFSentence($sentence));
 				}
 			}
 		}

@@ -1,5 +1,5 @@
 <?php
-class category
+class EFCategory
 {
 
 	public $weight; //double

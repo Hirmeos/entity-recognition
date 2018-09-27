@@ -1,5 +1,5 @@
 <?php
-class Statement
+class EFStatement
 {
 
 	public $concept_id; //string

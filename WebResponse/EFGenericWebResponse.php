@@ -1,5 +1,5 @@
 <?php
-class EKTGenericWebResponse
+class EFGenericWebResponse
 {
 	// property declaration
 	public $has_error;

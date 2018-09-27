@@ -1,5 +1,5 @@
 <?php
-class Sense
+class EFSense
 {
 
 	public $page_id; //int

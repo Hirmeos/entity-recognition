@@ -1,9 +1,9 @@
 <?php
 
-require_once('EKTGenericWebResponse.php');
-require_once('Domain/Sense.php');
+require_once('EFGenericWebResponse.php');
+require_once(__DIR__ . '/../Domain/EFSense.php');
 
-class EKTTermWebResponse extends EKTGenericWebResponse
+class EFTermWebResponse extends EFGenericWebResponse
 {
 	public $term; //string
 	public $lang; //string
@@ -16,13 +16,13 @@ class EKTTermWebResponse extends EKTGenericWebResponse
 		if (!$this->has_error){
 			$json = json_decode($response, true);
 			
-			$this->term = $json['term'];
+			$this->term = $json['EFTerm'];
 			$this->lang = $json['lang'];
 			
 			$senses = $json["senses"];
 			if ($senses){
 				foreach ($senses as $sense) {
-					array_push($this->senses, new Sense($sense));
+					array_push($this->senses, new EFSense($sense));
 				}
 			}
 		}

@@ -1,12 +1,12 @@
 <?php
 
-require_once('EKTGenericWebResponse.php');
-require_once('Domain/Category.php');
-require_once('Domain/TermEntityDefinition.php');
-require_once('Domain/Multilingual.php');
-require_once('Domain/Statement.php');
+require_once('EFGenericWebResponse.php');
+require_once(__DIR__ . '/../Domain/EFCategory.php');
+require_once(__DIR__ . '/../Domain/EFTermEntityDefinition.php');
+require_once(__DIR__ . '/../Domain/EFMultilingual.php');
+require_once(__DIR__ . '/../Domain/EFStatement.php');
 
-class EKTConceptWebResponse extends EKTGenericWebResponse
+class EFConceptWebResponse extends EFGenericWebResponse
 {
 	public $raw_name; //string
 	public $preferred_term; //string
@@ -37,14 +37,14 @@ class EKTConceptWebResponse extends EKTGenericWebResponse
 			$definitions = $json["definitions"];
 			if ($definitions){
 				foreach ($definitions as $definition) {
-					array_push($this->definitions, new TermEntityDefinition($definition));
+					array_push($this->definitions, new EFTermEntityDefinition($definition));
 				}
 			}
 			
 			$categories = $json["categories"];
 			if ($categories){
 				foreach ($categories as $category) {
-					array_push($this->categories, new Category($category));
+					array_push($this->categories, new EFCategory($category));
 				}
 			}
 			
@@ -53,14 +53,14 @@ class EKTConceptWebResponse extends EKTGenericWebResponse
 			$multilinguals = $json["multilingual"];
 			if ($multilinguals){
 				foreach ($multilinguals as $multilingual) {
-					array_push($this->multilingual, new Multilingual($multilingual));
+					array_push($this->multilingual, new EFMultilingual($multilingual));
 				}
 			}
 			
 			$statements = $json["statements"];
 			if ($statements){
 				foreach ($statements as $statement) {
-					array_push($this->statements, new Statement($statement));
+					array_push($this->statements, new EFStatement($statement));
 				}
 			}
 		}

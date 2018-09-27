@@ -1,5 +1,5 @@
 <?php
-class Multilingual
+class EFMultilingual
 {
 
 	public $lang; //string
@@ -9,7 +9,7 @@ class Multilingual
 	//Constructor
 	function __construct($data) {
 		$this->lang = $data['lang'];
-		$this->term = $data['term'];
+		$this->term = $data['EFTerm'];
 		$this->page_id = $data['page_id'];
 	}
 }

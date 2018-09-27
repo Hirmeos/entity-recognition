@@ -1,5 +1,5 @@
 <?php
-class Position
+class EFPosition
 {
 
 	public $p; //int //page, 1-based

@@ -1,5 +1,5 @@
 <?php
-class Language
+class EFLanguage
 {
 
 	public $lang; //string

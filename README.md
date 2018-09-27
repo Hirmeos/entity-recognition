@@ -1,60 +1,74 @@
-PHP Client for NERD entity fishing API
+<h1>PHP Client for NERD entity fishing API</h1>
 
-This is a PHP library/wrapper of the <a target="_blank" href="http://nerd.readthedocs.io/">NERD API</a>.
+This is a PHP library/wrapper of the <a target="_blank" href="http://nerd.readthedocs.io/">NERD API</a>. High level method calls that parse the JSON API response to PHP classes for ease of use.
+
+<h2>Installation</h2>
+
+<h3>Method 1</h3>
+
+Just copy the following files in your project:
+
+1. Folder: Domain
+1. Folder: WebResponse
+1. File: EFWebServiceManager.php
+ 
+<h3>Method 2</h3>
+
+Method 2 relies on Packagist (https://packagist.org/)
 
 <h2>Usage</h2>
 
-Include: EKTWebServiceManager.php in your file
+Include: EFWebServiceManager.php in your file
 
-`require_once('EKTWebServiceManager.php');`
+`require_once('EFWebServiceManager.php');`
 
 <b>Disambiguate Text</b>
 
-`EKTWebServiceManager::disambiguateText(String searchText, String lang);`
+`EFWebServiceManager::disambiguateText(String searchText, String lang);`
 
-Returns object of type: `EKTDisambiguateTextWebResponse`
+Returns object of type: `EFDisambiguateTextWebResponse`
 
 <b>Disambiguate Short Text</b>
 
-`EKTWebServiceManager::disambiguateShortText(String searchText, String lang);`
+`EFWebServiceManager::disambiguateShortText(String searchText, String lang);`
 
-Returns object of type: `EKTDisambiguateShortTextWebResponse`
+Returns object of type: `EFDisambiguateShortTextWebResponse`
 
 <b>Disambiguate Term Vector</b>
 
-`EKTWebServiceManager::disambiguateTermVector(Array searchText, String lang);`
+`EFWebServiceManager::disambiguateTermVector(Array searchText, String lang);`
 
-Returns object of type: `EKTDisambiguateTermWebResponse`
+Returns object of type: `EFDisambiguateTermWebResponse`
 
 <b>Disambiguate PDF</b>
 
-`EKTWebServiceManager::disambiguatePDF(String pdf_file_path, String lang);`
+`EFWebServiceManager::disambiguatePDF(String pdf_file_path, String lang);`
 
-Returns object of type: `EKTDisambiguatePDFWebResponse`
+Returns object of type: `EFDisambiguatePDFWebResponse`
 
 <b>Concept</b>
 
-`EKTWebServiceManager::concept(int concept_id, String lang);`
+`EFWebServiceManager::concept(int concept_id, String lang);`
 
-Returns object of type: `EKTConceptWebResponse`
+Returns object of type: `EFConceptWebResponse`
 
 <b>Term</b>
 
-`EKTWebServiceManager::term(int term_id, String lang);`
+`EFWebServiceManager::term(int term_id, String lang);`
 
-Returns object of type: `EKTTermWebResponse`
+Returns object of type: `EFTermWebResponse`
 
 <b>Language</b>
 
-`EKTWebServiceManager::language(String text);`
+`EFWebServiceManager::language(String text);`
 
-Returns object of type: `EKTLanguageWebResponse`
+Returns object of type: `EFLanguageWebResponse`
 
 <b>Segmentation</b>
 
-`EKTWebServiceManager::segmentation(String text);`
+`EFWebServiceManager::segmentation(String text);`
 
-Returns object of type: `EKTSegmentationWebResponse`
+Returns object of type: `EFSegmentationWebResponse`
 
 <h3>Responses</h3>
 

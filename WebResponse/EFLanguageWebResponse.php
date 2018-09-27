@@ -1,8 +1,8 @@
 <?php
 
-require_once('EKTGenericWebResponse.php');
+require_once('EFGenericWebResponse.php');
 
-class EKTLanguageWebResponse extends EKTGenericWebResponse
+class EFLanguageWebResponse extends EFGenericWebResponse
 {
 	public $lang; //string
 	public $conf; //double

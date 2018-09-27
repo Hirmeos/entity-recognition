@@ -1,9 +1,9 @@
 <?php
 
-require_once('EKTDisambiguateWebResponse.php');
-require_once('Domain/Term.php');
+require_once('EFDisambiguateWebResponse.php');
+require_once(__DIR__ . '/../Domain/EFTerm.php');
 
-class EKTDisambiguateTermWebResponse extends EKTDisambiguateWebResponse
+class EFDisambiguateTermWebResponse extends EFDisambiguateWebResponse
 {
 	public $terms = array(); //array of Term
 	
@@ -17,7 +17,7 @@ class EKTDisambiguateTermWebResponse extends EKTDisambiguateWebResponse
       		$terms = $json["termVector"];
       		if ($terms){
       			foreach ($terms as $term) {
-      				array_push($this->terms, new Term($term));
+      				array_push($this->terms, new EFTerm($term));
       			}
       		}
 		}

@@ -1,9 +1,9 @@
 <?php
 
-require_once('Domain/TermEntity.php');
-require_once('Domain/Multilingual.php');
+require_once('Domain/EFTermEntity.php');
+require_once('Domain/EFMultilingual.php');
 
-class Term
+class EFTerm
 {
 
 	public $term; //string
@@ -13,20 +13,20 @@ class Term
 	
 	//Constructor
 	function __construct($data) {
-		$this->term = $data['term'];
+		$this->term = $data['EFTerm'];
 		$this->score = $data['score'];
 		
 		$entities = $data["entities"];
 		if ($entities){
 			foreach ($entities as $entity) {
-				array_push($this->entities, new TermEntity($entity));
+				array_push($this->entities, new EFTermEntity($entity));
 			}
 		}
 		
-		$multilinguals = array_key_exists('multilingual', $data) ? $data["multilingual"] : NULL;
+		$multilinguals = array_key_exists('EFMultilingual', $data) ? $data["multilingual"] : NULL;
 		if ($multilinguals){
 			foreach ($multilinguals as $multilingual) {
-				array_push($this->multilingual, new Multilingual($multilingual));
+				array_push($this->multilingual, new EFMultilingual($multilingual));
 			}
 		}
 	}

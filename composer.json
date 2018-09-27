@@ -1,0 +1,7 @@
+{
+  "name": "hirmeos/entity-fishing-php-wrapper",
+  "description": "This is a PHP library/wrapper of the NERD API. High level method calls that parse the JSON API response to PHP classes for ease of use.",
+  "require": {
+    "php": "^5.3.3 || ^7.0"
+  }
+}
