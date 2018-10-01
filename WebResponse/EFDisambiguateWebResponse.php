@@ -11,7 +11,7 @@ class EFDisambiguateWebResponse extends EFGenericWebResponse
 	
 	//Constructor
 	function __construct($request, $response) {
-		parent::__construct($request);
+		parent::__construct($request, $response);
 	
 		if (!$this->has_error){
 			$json = json_decode($response, true);

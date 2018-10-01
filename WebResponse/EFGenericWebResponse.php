@@ -5,9 +5,11 @@ class EFGenericWebResponse
 	public $has_error;
 	public $status_code;
 	public $error_msg;
+    public $jsonstring;
 
 	//Constructor
-	function __construct($request) {
+	function __construct($request, $response) {
+        $this->jsonstring = $response;
 		$this->status_code = curl_getinfo($request, CURLINFO_HTTP_CODE);
 		if ($this->status_code == 200){
 			$this->has_error = FALSE;
