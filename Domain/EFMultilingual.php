@@ -9,7 +9,7 @@ class EFMultilingual
 	//Constructor
 	function __construct($data) {
 		$this->lang = $data['lang'];
-		$this->term = $data['EFTerm'];
+		$this->term = $data['term'];
 		$this->page_id = $data['page_id'];
 	}
 }

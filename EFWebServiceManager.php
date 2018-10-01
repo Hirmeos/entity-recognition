@@ -109,7 +109,7 @@ final class EFWebServiceManager
 	
 	public function concept($concept_id, $lang) {
 	
-		$url = $this::$baseUrl."/concept/".$concept_id;
+		$url = $this::$baseUrl."/kb/concept/".$concept_id;
 		if ($lang){
 			$url .= "?lang=".$lang;
 		}
